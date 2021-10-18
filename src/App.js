@@ -1,125 +1,108 @@
 import React from "react"
-
-import Birthday from "./components/birthday/Birthday"
-import Clock3 from "./components/clock3/Clock3"
-import Counter from "./components/counter/Counter"
+import { Container, Row, Col } from "react-bootstrap"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Menu from "./components/shared/Menu"
+import HomePage from "./pages/HomePage"
+import BirthdayPage from "./pages/BirthdayPage"
+import BootstrapClassicPage from "./pages/BootstrapClassicPage"
+import Header from "./components/shared/Header"
+import BootstrapReactPage from "./pages/BootstrapReactPage"
+import Clock1Page from "./pages/Clock1Page"
+import Clock2Page from "./pages/Clock2Page"
 import Countries from "./components/countries/Countries"
-
-import Odev from "./components/odev/Odev"
-import Posts from "./components/posts/Posts"
-// import BSClassic from "./components/bootstrap-classic/BSClassic";
-// import BSReact from "./components/bootstrap-react/BSReact";
-// import Clock1 from "./components/clock1/Clock1";
-// import Clock2 from "./components/clock2/Clock2";
-// import Hello from "./components/hello/Hello";
-// import Image from "./components/image/Image";
-// import Jsx from "./components/jsx/Jsx";
-// import Profile from "./components/profile/Profile";
-// import Props from "./components/props/Props";
-// import Header from "./components/shop/Header";
-import Shop from "./components/shop/Shop"
-import State from "./components/state/State"
-// import ExternalStyle from "./components/style/ExternalStyle";
-// import InlineStyle from "./components/style/InlineStyle";
-// import InternalStyle from "./components/style/InternalStyle";
-import Test from "./components/test/Test"
 import ChangeTitle from "./components/useEffect/ChangeTitle"
 import UserCards from "./components/userCards/UserCards"
-import Zcountries from "./components/zcountries/Zcountries"
-
+import RandomImages from "./components/randomImages/RandomImages"
+import Props from "./components/props/Props"
+import Profile from "./components/profile/Profile"
+import Jsx from "./components/jsx/Jsx"
+import Counter from "./components/counter/Counter"
+import Hello from "./components/hello/Hello"
+import Comp from "./components/comp/Comp"
+import Form1 from "./components/forms/Form1"
+import Form2 from "./components/forms/Form2"
+import Form3 from "./components/forms/Form3"
+import Form4 from "./components/forms/Form4"
+import Shop from "./components/shop/Shop"
 function App() {
-  const avatarUrl =
-    "https://images.unsplash.com/photo-1633156583772-3c3ccee99b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
-
   return (
-    <div>
-      {/*
-       
-     Merhaba Dünya (App)
-      <Hello />
-      <Test />
-      <Jsx />
-      <InlineStyle />
-      <InternalStyle />
-      <ExternalStyle />
- 
-      <Clock1 />
-
-      
-
-      <Props ad="Ziya" soyad="Sarı" />
-      <Props ad="Ali" soyad="Kara" />
-      <Props ad="Ayşe" soyad="Pembe" />
-      <Props ad="Hakan" soyad="Mavi" />
-
-       
-
-      <Clock2 yaziRengi="#FFFFFF" zeminRengi="#000000" />
-     
-
-
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <Profile
-          avatar={avatarUrl}
-          name="Ali Gel"
-          location="Turkiye, İstanbul"
-          shot="4"
-          followers="25"
-          following="45"
-        />
-
-        <Profile
-          avatar="https://images.unsplash.com/photo-1550985607-b636cef44ec4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=535&q=80"
-          name="Mehmet Gel"
-          location="Turkiye, İzmir"
-          shot="43"
-          followers="123"
-          following="4545"
-        />
-
-        <Profile
-          avatar="https://images.unsplash.com/photo-1550985607-b636cef44ec4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=535&q=80"
-          name="Mehmet Gel"
-          location="Turkiye, İzmir"
-          shot="43"
-          followers="123"
-          following="4545"
-        />
-      </div>
-
-     
-
-      <Image />
-       
-       <BSClassic />
-    
-    <BSReact />
-   
-    <Shop />
-     
-     <State />
-    
-
-      <Counter />
-      
- <Odev />
- 
-      <Birthday />
-      
-      <Clock3 />
-
-     
-      <ChangeTitle />
-       
-      <UserCards />
-
-      <Countries />
-           
-      <Zcountries />
-       */}
-      <Posts />
-    </div>
+    <Router>
+      <Header />
+      <Container>
+        <Row>
+          <Col md={4}>
+            <Menu />
+          </Col>
+          <Col md={8}>
+            <Switch>
+              <Route path="/shop">
+                <Shop />
+              </Route>
+              <Route path="/form4">
+                <Form4 />
+              </Route>
+              <Route path="/form3">
+                <Form3 />
+              </Route>
+              <Route path="/form2">
+                <Form2 />
+              </Route>
+              <Route path="/form1">
+                <Form1 />
+              </Route>
+              <Route path="/comp">
+                <Comp />
+              </Route>
+              <Route path="/hello">
+                <Hello />
+              </Route>
+              <Route path="/counter">
+                <Counter />
+              </Route>
+              <Route path="/jsx">
+                <Jsx />
+              </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route>
+              <Route path="/props">
+                <Props />
+              </Route>
+              <Route path="/rimages">
+                <RandomImages />
+              </Route>
+              <Route path="/ucards">
+                <UserCards />
+              </Route>
+              <Route path="/ctitle">
+                <ChangeTitle />
+              </Route>
+              <Route path="/countries">
+                <Countries />
+              </Route>
+              <Route path="/clock-2">
+                <Clock2Page />
+              </Route>
+              <Route path="/clock-1">
+                <Clock1Page />
+              </Route>
+              <Route path="/bs-react">
+                <BootstrapReactPage />
+              </Route>
+              <Route path="/bs-classic">
+                <BootstrapClassicPage />
+              </Route>
+              <Route path="/birthday">
+                <BirthdayPage />
+              </Route>
+              <Route path="/">
+                <HomePage />
+              </Route>
+            </Switch>
+          </Col>
+        </Row>
+      </Container>
+    </Router>
   )
 }
-
 export default App
